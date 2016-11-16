@@ -43,6 +43,7 @@ public class Example2Activity extends AppCompatActivity {
             }
         });
 
+        //订阅Observable
         mTvShowSubscription = tvShowObservable
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -50,16 +51,17 @@ public class Example2Activity extends AppCompatActivity {
                         new Observer<List<String>>() {
                             @Override
                             public void onCompleted() {
-
+                                Log.d(TAG, "Observer: onCompleted");
                             }
 
                             @Override
                             public void onError(Throwable e) {
-
+                                Log.d(TAG, "Observer: onError");
                             }
 
                             @Override
                             public void onNext(List<String> tvShows) {
+                                Log.d(TAG, "Observer: onNext");
                                 displayTvShows(tvShows);
                             }
                         });

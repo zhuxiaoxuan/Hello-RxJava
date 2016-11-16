@@ -18,7 +18,7 @@ public class RestClient {
     public List<String> getFavoriteTvShows() {
         try {
             // "Simulate" the delay of network.
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

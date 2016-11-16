@@ -33,16 +33,17 @@ public class Example1Activity extends AppCompatActivity {
 
             @Override
             public void onCompleted() {
-
+                Log.d(TAG,"Observable onCompleted");
             }
 
             @Override
             public void onError(Throwable e) {
-
+                Log.d(TAG,"Observable onError");
             }
 
             @Override
             public void onNext(List<String> colors) {
+                Log.d(TAG,"Observable onNext");
                 mSimpleStringAdapter.setStrings(colors);
             }
         });
